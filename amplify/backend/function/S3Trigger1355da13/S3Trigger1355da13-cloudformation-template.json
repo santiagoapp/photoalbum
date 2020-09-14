@@ -164,13 +164,35 @@
         }
       }
     },
+        "RekognitionPolicy": {
+            "DependsOn": [
+                "LambdaExecutionRole"
+            ],
+            "Type": "AWS::IAM::Policy",
+            "Properties": {
+                "PolicyName": "rekognition-detect-labels",
+                "Roles": [{
+                    "Ref": "LambdaExecutionRole"
+                }],
+                "PolicyDocument": {
+                    "Version": "2012-10-17",
+                    "Statement": [{
+                        "Effect": "Allow",
+                        "Action": [
+                            "rekognition:detectLabels"
+                        ],
+                        "Resource": "*"
+                    }]
+                }
+            }
+        },
     "AmplifyResourcesPolicy": {
       "DependsOn": [
         "LambdaExecutionRole"
       ],
       "Type": "AWS::IAM::Policy",
       "Properties": {
-        "PolicyName": "amplify-lambda-execution-policy",
+        "PolicyName": "amplify-lambda-execution-policy-api",
         "Roles": [
           {
             "Ref": "LambdaExecutionRole"

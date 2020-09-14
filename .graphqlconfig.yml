@@ -1,0 +1,12 @@
+projects:
+  photoalbums:
+    schemaPath: src/graphql/schema.json
+    includes:
+      - media
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: javascript
+        generatedFileName: ''
+        docsFilePath: src/graphql

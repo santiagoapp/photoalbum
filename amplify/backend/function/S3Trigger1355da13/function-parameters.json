@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "api": {
+      "photoalbums": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}
